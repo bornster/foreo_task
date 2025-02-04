@@ -1,13 +1,8 @@
 import os
-from pathlib import Path
-import time
 import pandas as pd
 from prefect import flow
-import psycopg2
 from sqlalchemy import create_engine
 from prefect_sqlalchemy import SqlAlchemyConnector
-
-
 
 @flow(log_prints=True)
 def process_data() -> pd.DataFrame:
