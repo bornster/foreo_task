@@ -30,7 +30,7 @@ def upload_data(data: pd.DataFrame) -> None:
     # Create the engine from the database block
     engine = database_block.get_client(client_type="engine")
     # Transcribe data to postgres database
-    df.to_sql('store_sales', engine, if_exists='replace', index=False, method='multi', chunksize=1000)
+    data.to_sql('store_sales', engine, if_exists='replace', index=False, method='multi', chunksize=1000)
 
 
 if __name__ == "__main__":
